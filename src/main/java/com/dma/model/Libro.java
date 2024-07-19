@@ -1,19 +1,25 @@
 package com.dma.model;
 
+import jakarta.persistence.*;
+
 import java.sql.Blob;
 
+@Entity
 public class Libro {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idLibro;
     private String nombre;
     private String sinopsis;
-    private Blob imagen;
     private Double precio;
     private int existencias;
     private String autor;
     private String genero;
     private String idioma;
     private String editorial;
+
+    @Lob
+    private Blob imagen;
 
     public Libro() {
     }
@@ -111,5 +117,6 @@ public class Libro {
     public void setEditorial(String editorial) {
         this.editorial = editorial;
     }
+
 
 }

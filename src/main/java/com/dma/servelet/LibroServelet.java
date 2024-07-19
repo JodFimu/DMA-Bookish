@@ -28,11 +28,20 @@ public class LibroServelet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<Libro> pajaros = libroService.listarLibros();
-        pajaros.forEach(p -> System.out.println(p));
-        request.setAttribute("pajaros", pajaros);
+        List<Libro> libros = libroService.listarLibros();
+        libros.forEach(p -> System.out.println(p));
+        request.setAttribute("Libro", libros);
         request.getRequestDispatcher("/listar-libro/listar-libro.jsp").forward(request, response);
     }
+
+    /*
+    * protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Producto> productos = productoService.listarProductos();
+        productos.forEach(p -> System.out.println(p));
+        req.setAttribute("productos", productos);
+        req.getRequestDispatcher("/lista-producto/lista-producto.jsp").forward(req, resp);
+    }
+    * */
 
     private void crearLibro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int idLibro = 0;

@@ -10,7 +10,7 @@ public class JpaUtil {
     private static EntityManagerFactory buildEntityManagerFactory() {
         try{
 
-            return Persistence.createEntityManagerFactory("CRUDBookishDB");
+            return Persistence.createEntityManagerFactory("BookishDB");
         }catch (Throwable e){
             throw new ExceptionInInitializerError(e);
         }

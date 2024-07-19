@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context path="/CRUDBookishDB">
+<Context path="/BookishDB">
     <Resource>
         auth="Container"
         driverClassName="com.mysql.cj.jdbc.Driver"
         maxIdle="30"
         maxTotal="100"
         maxWaitMillis="10000"
-        name="jdbc/CRUDBookishDB"
+        name="jdbc/BookishDB"
         username="DMA_Corporation"
         password="DMAPassword"
         type="javax.sql.DataSource"
