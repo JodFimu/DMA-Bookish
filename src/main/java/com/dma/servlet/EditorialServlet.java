@@ -36,10 +36,6 @@ public class EditorialServlet extends HttpServlet {
         req.getRequestDispatcher("/listar-editorial/listar-editorial.jsp").forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        crearEditorial(req, resp);
-    }
 
     private void crearEditorial(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id=0
@@ -51,6 +47,37 @@ public class EditorialServlet extends HttpServlet {
         Editorial editorial = new Editorial(0, nombre, telefono, contacto, NITEditorial);
         editorialService.crearEditorial(editorial);
 
-        resp.sendRedirect(req.getContextPath() + "/editorial-servlet");
+        resp.sendRedirect(req.getContextPath() + "/editorial-servlet");                              
+    }  
+    
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String pathInfo = req.getPathInfo();
+            if (pathInfo == null || pathInfo.equals("/")) {
+                crearEditorial(req, resp);
+            }
     }
+    
+            
+    private void editarEditorial(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Editorial editorial = editorialService.buscarEditorial(idEditorial);
+
+        if (editorial != null) {
+            String nombre = req.getParameter("nombre");
+            String telefono = req.getParameter("telefono");
+            String contacto = req.getParameter("contacto");
+            String NITEditorial = req.getParameter("NITEditorial");
+
+            editorial.setNombre(nombre);
+            editorial.setTelefono(telefono);
+            editorial.setContacto(contacto);
+            editorial.setNITEditorial(NITEditorial);
+
+            editorialService.editarEditorial(editorial);
+            resp.sendRedirect(req.getContextPath() + "/editorial-servlet");
+        } else {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
+    }       
+            
 }
