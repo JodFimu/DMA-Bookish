@@ -1,13 +1,56 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.dma.servlet;
 
+import com.dma.model.Editorial;
+import com.dma.services.EditorialService;
+import com.dma.services.EditorialServicee;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.MultipartConfig;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+import java.util.List;
+
 /**
- *
- * @author ceo0f
+ * DMA Corporation
+ * Fecha de creacion: 21 de julio de 2024
  */
-public class EditorialServlet {
-    
+
+@WebServlet(name = "EditorialServlet", value = {"/editorial-servlet"})
+@MultipartConfig
+public class EditorialServlet extends HttpServlet {
+
+    private EditorialServicee editorialService;
+
+    public void init() throws ServletException {
+        super.init();
+        this.editorialService = new EditorialService();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        List<Editorial> editoriales = editorialService.listarEditoriales();
+        req.setAttribute("editoriales", editoriales);
+        req.getRequestDispatcher("/listar-editorial/listar-editorial.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        crearEditorial(req, resp);
+    }
+
+    private void crearEditorial(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        int id=0
+        String nombre = req.getParameter("nombre");
+        String telefono = req.getParameter("telefono");
+        String contacto = req.getParameter("contacto");
+        String NITEditorial = req.getParameter("NITEditorial");
+
+        Editorial editorial = new Editorial(0, nombre, telefono, contacto, NITEditorial);
+        editorialService.crearEditorial(editorial);
+
+        resp.sendRedirect(req.getContextPath() + "/editorial-servlet");
+    }
 }
