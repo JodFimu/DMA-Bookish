@@ -44,7 +44,7 @@ public class EditorialServlet extends HttpServlet {
         String contacto = req.getParameter("contacto");
         String NITEditorial = req.getParameter("NITEditorial");
 
-        Editorial editorial = new Editorial(0, nombre, telefono, contacto, NITEditorial);
+        Editorial editorial = new Editorial(id, nombre, telefono, contacto, NITEditorial);
         editorialService.crearEditorial(editorial);
 
         resp.sendRedirect(req.getContextPath() + "/editorial-servlet");                              
@@ -59,7 +59,7 @@ public class EditorialServlet extends HttpServlet {
     }
     
             
-    private void editarEditorial(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    private void editarEditorial(int idEditorial, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Editorial editorial = editorialService.buscarEditorial(idEditorial);
 
         if (editorial != null) {
@@ -79,5 +79,52 @@ public class EditorialServlet extends HttpServlet {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND);
         }
     }       
+    
+     @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String pathInfo = req.getPathInfo();
+
+        if (pathInfo != null && !pathInfo.equals("/")) {
+            String[] pathAttributes = pathInfo.split("/");
+            if (pathAttributes.length == 2) {
+                int idEditorial = Integer.parseInt(pathAttributes[1]);
+                editarEditorial(idEditorial, req, resp);
+            } else {
+                resp.sendError(HttpServletResponse.SC_BAD_GATEWAY);
+            }
+        } else {
+            resp.sendError(HttpServletResponse.SC_BAD_GATEWAY);
+        }
+    }
+    
+    
+    private void eliminarEditorial(int idEditorial , HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        Editorial editorial = editorialService.buscarEditorial(idEditorial);
+        if (editorial != null) {
+            editorialService.eliminarEditorial(idEditorial);
+            resp.sendRedirect(req.getContextPath() + "/editorial-servlet");
+        } else {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
+    }
+  
+    
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String pathInfo = req.getPathInfo();
+
+        if (pathInfo != null && !pathInfo.equals("/")) {
+            String[] pathParts = pathInfo.split("/");
+            if (pathParts.length == 2) {
+                int idEditorial = Integer.parseInt(pathParts[1]);
+                eliminarEditorial(idEditorial, req, resp);
+            } else {
+                resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
+        } else {
+            resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+        }
+    }
+
             
 }
