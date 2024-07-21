@@ -23,18 +23,34 @@ import java.util.List;
 public class EditorialServlet extends HttpServlet {
 
     private EditorialServicee editorialService;
+    
+     /**
+     * Método init se ejecuta al iniciar el servlet. Aquí se instancia el servicio de la Editorial.
+     */
 
     public void init() throws ServletException {
         super.init();
         this.editorialService = new EditorialService();
     }
 
+    /**
+     * doGet recupera y muestra toda la informacion almacenada en el servidor
+     */
+    
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Editorial> editoriales = editorialService.listarEditoriales();
         req.setAttribute("editoriales", editoriales);
         req.getRequestDispatcher("/listar-editorial/listar-editorial.jsp").forward(req, resp);
     }
+    
+    /**
+     * Crea una nueva editorial con los datos proporcionados en la solicitud.
+     * @param req HttpServletRequest
+     * @param resp HttpServletResponse
+     * @throws ServletException 
+     * @throws IOException 
+     */
 
 
     private void crearEditorial(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -50,6 +66,10 @@ public class EditorialServlet extends HttpServlet {
         resp.sendRedirect(req.getContextPath() + "/editorial-servlet");                              
     }  
     
+    /**
+     * doPost maneja la creacion de nuevas entidades, procesalos datos enviados por el cliente y los almacena en la base de datos
+     */
+    
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String pathInfo = req.getPathInfo();
@@ -58,6 +78,14 @@ public class EditorialServlet extends HttpServlet {
             }
     }
     
+    /**
+     * Edita los datos existentes y los reemplaza por los nuevos datos ingresados en el formulario
+     * @param idEditorial ID de la editorial a editar.
+     * @param req HttpServletRequest
+     * @param resp HttpServletResponse
+     * @throws ServletException 
+     * @throws IOException 
+     */
             
     private void editarEditorial(int idEditorial, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Editorial editorial = editorialService.buscarEditorial(idEditorial);
@@ -80,6 +108,10 @@ public class EditorialServlet extends HttpServlet {
         }
     }       
     
+    /**
+     * doPut maneja la actualizacion de los recursos en el servidor
+     */
+    
      @Override
     protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String pathInfo = req.getPathInfo();
@@ -97,6 +129,15 @@ public class EditorialServlet extends HttpServlet {
         }
     }
     
+     /**
+     * Elimina una editorial existente.
+     * @param idEditorial ID de la editorial a eliminar.
+     * @param req HttpServletRequest
+     * @param resp HttpServletResponse
+     * @throws ServletException 
+     * @throws IOException 
+     */
+    
     
     private void eliminarEditorial(int idEditorial , HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Editorial editorial = editorialService.buscarEditorial(idEditorial);
@@ -108,6 +149,9 @@ public class EditorialServlet extends HttpServlet {
         }
     }
   
+    /**
+     * doDelete elimina una entidad con base a su ID
+     */
     
     @Override
     protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
