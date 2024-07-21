@@ -20,17 +20,24 @@ public class Clientes {
     public Clientes() {
     }
 
-    public Clientes(int idClientes, String nombreCliente, String apellidoCliente) {
+    public Clientes(int idClientes, String nombreCliente, String apellidoCliente, String direccionCliente, String telefonoCliente, String correoCliente) {
         this.idClientes = idClientes;
         this.nombreCliente = nombreCliente;
         this.apellidoCliente = apellidoCliente;
-    }
-
-    public Clientes(String direccionCliente, String telefonoCliente, String correoCliente) {
         this.direccionCliente = direccionCliente;
         this.telefonoCliente = telefonoCliente;
         this.correoCliente = correoCliente;
     }
+
+    public Clientes(String nombreCliente, String apellidoCliente, String direccionCliente, String telefonoCliente, String correoCliente) {
+        this.nombreCliente = nombreCliente;
+        this.apellidoCliente = apellidoCliente;
+        this.direccionCliente = direccionCliente;
+        this.telefonoCliente = telefonoCliente;
+        this.correoCliente = correoCliente;
+    }
+
+    
 
     public int getIdClientes() {
         return idClientes;
