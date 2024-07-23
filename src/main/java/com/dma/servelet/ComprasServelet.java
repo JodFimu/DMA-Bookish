@@ -1,7 +1,7 @@
 package com.dma.servelet;
 
 import com.dma.model.Compras;
-import com.dma.model.Libro;
+import com.dma.model.Compras;
 import com.dma.service.ComprasService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
