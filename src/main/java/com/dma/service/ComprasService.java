@@ -1,6 +1,6 @@
 package com.dma.service;
 
-import com.dma.model.Libro;
+import com.dma.model.Compras;
 import com.dma.util.JpaUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
