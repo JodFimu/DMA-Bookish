@@ -28,7 +28,7 @@
             <a class="nav-link" href="./formulario-libro/formulario-libro.jsp">Formulario de Productos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./libro-servelet">Lista de Productos</a>
+            <a class="nav-link " href="./libro-servlet">Lista de Productos</a>
           </li>
         </ul>
       </div>

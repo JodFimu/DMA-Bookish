@@ -35,7 +35,7 @@
                         <a class="nav-link" href="./formulario-libro/formulario-libro.jsp">Formulario de libros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../libro-servelet">Lista de productos</a>
+                        <a class="nav-link active" aria-current="page" href="../libro-servlet">Lista de productos</a>
                     </li>
                 </ul>
             </div>
@@ -49,7 +49,6 @@
             <th scope="col">#</th>
             <th scope="col">Nombre</th>
             <th scope="col">sinopsis</th>
-            <th scope="col">imagen</th>
             <th scope="col">Precio</th>
             <th scope="col">Existencias</th>
             <th scope="col">Autor</th>
@@ -64,7 +63,6 @@
                 <td>${Libro.idLibro}</td>
                 <td>${Libro.nombre}</td>
                 <td>${Libro.sinopsis}</td>
-                <td>${Libro.imagen}</td>
                 <td>${Libro.precio}</td>
                 <td>${Libro.existencias}</td>
                 <td>${Libro.autor}</td>

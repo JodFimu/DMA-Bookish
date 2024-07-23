@@ -10,8 +10,6 @@
         username="DMA_Corporation"
         password="DMAPassword"
         type="javax.sql.DataSource"
-        url="jdbc:mysql://localhost:3306/CRUDBookishDB?serverTimezone=GMT-6"
-
-
+        url="jdbc:mysql://localhost:3306/BookishDB?serverTimezone=GMT-6"
     </Resource>
 </Context>

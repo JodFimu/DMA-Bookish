@@ -7,6 +7,7 @@ import jakarta.persistence.Persistence;
 public class JpaUtil {
     private static final EntityManagerFactory em = buildEntityManagerFactory();
 
+
     private static EntityManagerFactory buildEntityManagerFactory() {
         try{
 
@@ -14,16 +15,15 @@ public class JpaUtil {
         }catch (Throwable e){
             throw new ExceptionInInitializerError(e);
         }
-
     }
 
-    public static EntityManager getEntityManager() {
 
+    public static EntityManager getEntityManager() {
         return em.createEntityManager();
     }
 
     public static void close() {
         em.close();
-
     }
+
 }

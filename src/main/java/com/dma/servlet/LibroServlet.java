@@ -1,4 +1,4 @@
-package com.dma.servelet;
+package com.dma.servlet;
 
 import com.dma.model.Libro;
 import com.dma.service.LibroService;
@@ -13,9 +13,9 @@ import java.io.IOException;
 import java.sql.Blob;
 import java.util.List;
 
-@WebServlet(name = "LibroServelet", value = {"/libro-servelet"})
+@WebServlet(name = "LibroServlet", value = {"/libro-servlet"})
 @MultipartConfig
-public class LibroServelet extends HttpServlet {
+public class LibroServlet extends HttpServlet {
     private LibroService libroService = new LibroService();
 
     @Override
@@ -34,14 +34,7 @@ public class LibroServelet extends HttpServlet {
         request.getRequestDispatcher("/listar-libro/listar-libro.jsp").forward(request, response);
     }
 
-    /*
-    * protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        List<Producto> productos = productoService.listarProductos();
-        productos.forEach(p -> System.out.println(p));
-        req.setAttribute("productos", productos);
-        req.getRequestDispatcher("/lista-producto/lista-producto.jsp").forward(req, resp);
-    }
-    * */
+
 
     private void crearLibro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int idLibro = 0;
@@ -58,7 +51,7 @@ public class LibroServelet extends HttpServlet {
         Libro libro = new Libro(idLibro,nombre,sinopsis,imagen,precio,existencias,autor,genero,idioma,editorial);
         libroService.crearLibro(libro);
 
-        response.sendRedirect(request.getContextPath() + "/listar-libro");
+        response.sendRedirect(request.getContextPath() + "/libro-servlet");
     }
 
     @Override
@@ -71,7 +64,6 @@ public class LibroServelet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_BAD_GATEWAY);
 
         }
-
     }
 
 
