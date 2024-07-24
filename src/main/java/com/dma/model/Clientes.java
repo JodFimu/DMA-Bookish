@@ -1,5 +1,6 @@
 package com.dma.model;
 
+// importaciones de persistencia de jakarta
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,6 +11,7 @@ public class Clientes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+// atributos de la base de datos
     private int idClientes;
     private String nombreCliente;
     private String apellidoCliente;
@@ -17,21 +19,25 @@ public class Clientes {
      private String telefonoCliente;
       private String correoCliente;
 
+      //costructor vacio
     public Clientes() {
     }
 
+    //constructor lleno con atributos principales de la entidad clientes
     public Clientes(int idClientes, String nombreCliente, String apellidoCliente) {
         this.idClientes = idClientes;
         this.nombreCliente = nombreCliente;
         this.apellidoCliente = apellidoCliente;
     }
 
+    // constructor lleno con atributos complementarios de la entidad clientes
     public Clientes(String direccionCliente, String telefonoCliente, String correoCliente) {
         this.direccionCliente = direccionCliente;
         this.telefonoCliente = telefonoCliente;
         this.correoCliente = correoCliente;
     }
 
+    //getter y setter de cada atributo
     public int getIdClientes() {
         return idClientes;
     }
@@ -80,6 +86,7 @@ public class Clientes {
         this.correoCliente = correoCliente;
     }
 
+    // sobre escritura del metodo
     @Override
     public String toString() {
         return "Clientes{" + "idClientes=" + idClientes + ", nombreCliente=" + nombreCliente + ", apellidoCliente=" + apellidoCliente + ", direccionCliente=" + direccionCliente + ", telefonoCliente=" + telefonoCliente + ", correoCliente=" + correoCliente + '}';
