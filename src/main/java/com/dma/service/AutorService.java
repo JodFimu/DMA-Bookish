@@ -8,7 +8,7 @@ import jakarta.persistence.TypedQuery;
 import java.util.List;
 /*
  *
- * @author javier
+ * @author javier hernandez
  */
 
 public class AutorService implements IAutorService{
