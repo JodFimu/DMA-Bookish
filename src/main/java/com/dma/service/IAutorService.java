@@ -11,4 +11,6 @@ public interface IAutorService {
     public Autor buscarAutor(int idAutor);
 
     public void editarAutor(Autor autor);
+
+    public void eliminarAutor(int idAutor);
 }

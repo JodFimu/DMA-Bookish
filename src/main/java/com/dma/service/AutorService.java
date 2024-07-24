@@ -23,8 +23,8 @@ public class AutorService implements IAutorService{
 
     /*
      * Se creo el metodo abstracto para manipular la transaccion que
-     * sirve para añadir un cliente el metodo espera recibir un objeto de tipo Clientes
-     * llamado libro @param cliente
+     * sirve para añadir un autor el metodo espera recibir un objeto de tipo Autor
+     * llamado autor @param autor
      */
 
     @Override
@@ -55,8 +55,8 @@ public class AutorService implements IAutorService{
     }
 
     /*
-     * Se creo el metodo abstarco para buscar un cliente en base a su id
-     * @param idLibro
+     * Se creo el metodo abstarco para buscar un autor en base a su id
+     * @param idAutor
      *  @return
      */
     @Override
@@ -65,13 +65,21 @@ public class AutorService implements IAutorService{
     }
 
     /*
-     * Se creo el metodo abstracto para editar el libro, que fusiona los
+     * Se creo el metodo abstracto para editar el autor, que fusiona los
      * atributos nuevos con los viejos con la funcion del objeto de EntityManager
-     * @param libro
+     * @param autor
      */
     @Override
     public void editarAutor(Autor autor) {
         em.merge(autor);
+    }
+
+    @Override
+    public void eliminarAutor(int idAutor){
+        Autor autor = buscarAutor(idAutor);
+        if(autor != null){
+            em.remove(autor);
+        }
     }
 
 }

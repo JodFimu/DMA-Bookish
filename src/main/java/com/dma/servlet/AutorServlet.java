@@ -33,6 +33,10 @@ public class AutorServlet extends HttpServlet {
     /*
     * Se manda a llamar la Arraylist de autor
      */
+
+    /*
+    * Este metodo almacena los datos
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Autor> autor = AutorService.listarAutor();
@@ -42,11 +46,86 @@ public class AutorServlet extends HttpServlet {
     }
 
     private void crearAutor(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-
         String nombre = req.getParameter("nombre");
         String apellido = req.getParameter("apellido");
 
-        Autor libro = new Autor(nombre, apellido);
-        AutorService.crearAutor(new Autor());
+        Autor autor = new Autor(nombre, apellido);
+        AutorService.crearAutor(autor);
+
+        resp.sendRedirect(req.getContextPath() + "/");
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String pathInfo = req.getPathInfo();
+        if (pathInfo == null || pathInfo.equals("/")) {
+            crearAutor(req, resp);
+
+        }else{
+            resp.sendError(HttpServletResponse.SC_BAD_GATEWAY);
+        }
+    }
+
+    private void editarAutor(int idAutor, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        Autor autor = AutorService.buscarAutor(idAutor);
+
+        if(autor != null) {
+            String nombre = req.getParameter("nombre");
+            String apellido = req.getParameter("apellido");
+
+            autor.setNombre(nombre);
+            autor.setApellido(apellido);
+
+            AutorService.editarAutor(autor);
+
+            resp.sendRedirect(req.getContextPath() + "/");
+        }else {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+        }
+    }
+
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String pathInfo = req.getPathInfo();
+
+        if (pathInfo != null && !pathInfo.equals("/")) {
+            String [] pathParts = pathInfo.split("/");
+            if(pathParts.length == 2) {
+                int idAutor = Integer.parseInt(pathParts[1]);
+                editarAutor(idAutor, req, resp);
+            }else {
+                resp.sendError(HttpServletResponse.SC_BAD_GATEWAY);
+            }
+            }else{
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+
+            }
+        }
+
+        private void eliminarAutor(int idAutor, HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+        Autor autor = AutorService.buscarAutor(idAutor);
+        if (autor != null) {
+            AutorService.eliminarAutor(idAutor);
+            resp.sendRedirect(req.getContextPath() + "/autor/");
+        }else {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+            }
+        }
+
+    @Override
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String pathInfo = req.getPathInfo();
+
+        if (pathInfo != null && !pathInfo.equals("/")) {
+            String [] pathParts = pathInfo.split("/");
+            if(pathParts.length == 2) {
+                int idAutor = Integer.parseInt(pathParts[1]);
+                eliminarAutor(idAutor, req, resp);
+            }else {
+                resp.sendError(HttpServletResponse.SC_BAD_GATEWAY);
+            }
+            }else{
+                resp.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            }
+        }
 }
