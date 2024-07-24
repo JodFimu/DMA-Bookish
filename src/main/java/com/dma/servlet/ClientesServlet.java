@@ -28,6 +28,9 @@ public class ClientesServlet extends HttpServlet{
         this.clientesService = new ClientesService();
     }
     
+    /*
+    Metodo http que funciona para listar a los clientes
+    */
         @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Clientes> cliente = clientesService.listarCliente();
@@ -36,6 +39,9 @@ public class ClientesServlet extends HttpServlet{
         req.getRequestDispatcher("/lista-clientes/lista-clientes.jsp").forward(req, resp);
     }
     
+    /*
+    Metodo para setear un nuevo cliente
+    */
     private void crearCliente(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombre = request.getParameter("nombreCliente");
         String apellido = request.getParameter("apellidoCliente");
@@ -49,6 +55,10 @@ public class ClientesServlet extends HttpServlet{
         response.sendRedirect(request.getContextPath() + "/");
     }
     
+    /*
+    Metodo http que llama al metodo crear cliente cuando path info es nulo o la ruta es /.
+    Termina de crear un cliente
+    */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pathInfo = request.getPathInfo();
