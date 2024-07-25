@@ -1,14 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< Updated upstream
-  <title>JSP - Hello World</title>
-</head>
-<body>
-<h1><%= "Hello World!" %></h1>
-<br/>
-<a href="hello-servlet">Hello Servlet</a>
-=======
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bookish</title>
@@ -46,10 +38,10 @@
             <a class="nav-link " href="./clientes-servlet">Lista de Clientes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./formulario-autor/formulario-autor.jsp">Formulario de Autores</a>
+            <a class="nav-link" href="./formulario-compras/formulario-compras.jsp">Formulario de Compras</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="./listar-autor/listar-autor.jsp">Lista de Autores</a>
+            <a class="nav-link " href="./compras-servlet">Lista de Compras</a>
           </li>
         </ul>
       </div>
@@ -98,6 +90,5 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
->>>>>>> Stashed changes
 </body>
 </html>

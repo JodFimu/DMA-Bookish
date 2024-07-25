@@ -1,6 +1,7 @@
 
 package com.dma.model;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -13,7 +14,7 @@ import java.math.BigDecimal;
  */
 
 //Se crea el Bean o Model para la entidad Factura. 
-
+@Entity
 public class Factura {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

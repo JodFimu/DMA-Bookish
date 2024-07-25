@@ -33,6 +33,16 @@ public class Clientes {
         this.direccionCliente = direccionCliente;
     }
 
+    public Clientes(int idClientes, String NITClientes, String nombreCliente, String apellidoCliente, String direccionCliente, String telefonoCliente, String correoCliente) {
+        this.idClientes = idClientes;
+        this.NITClientes = NITClientes;
+        this.nombreCliente = nombreCliente;
+        this.apellidoCliente = apellidoCliente;
+        this.direccionCliente = direccionCliente;
+        this.telefonoCliente = telefonoCliente;
+        this.correoCliente = correoCliente;
+    }
+
     //constructor lleno con atributos principales de la entidad clientes
     public Clientes(int idClientes, String nombreCliente, String apellidoCliente) {
         this.idClientes = idClientes;
@@ -104,11 +114,7 @@ public class Clientes {
         this.NITClientes = NITClientes;
     }
 
-    // sobre escritura del metodo
-    @Override
-    public String toString() {
-        return "Clientes{" + "idClientes=" + idClientes + ", nombreCliente=" + nombreCliente + ", apellidoCliente=" + apellidoCliente + ", direccionCliente=" + direccionCliente + ", telefonoCliente=" + telefonoCliente + ", correoCliente=" + correoCliente + '}';
-    }
+
       
       
              

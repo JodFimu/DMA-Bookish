@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Servicio para manejar las operaciones CRUD de la entidad Compras.
  */
-public class ComprasService implements IcComprasService {
+public class ComprasService implements IComprasService {
 
     private EntityManager em;
 
@@ -48,6 +48,7 @@ public class ComprasService implements IcComprasService {
             e.printStackTrace();
         }
     }
+
 
     /**
      * Lista todas las entidades Compras de la base de datos.

@@ -14,7 +14,7 @@ public interface IComprasService {
         Crea una nueva compra.
         @param compra Objeto de tipo Compras que contiene la información de la nueva compra.
     */
-    public void crearComnpra(Compras Compra);
+    public void crearCompras(Compras Compra);
 
     /*
         Lista todas las compras.

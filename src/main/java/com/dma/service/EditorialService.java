@@ -2,17 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.dma.services;
+package com.dma.service;
 
 import com.dma.model.Editorial;
-import com.dma.services.EditorialServicee;
 import com.dma.util.JpaUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.TypedQuery;
 import java.util.List;
 
-public class EditorialService implements EditorialServicee {  // Implementa la interfaz EditorialServicee
+public class EditorialService implements com.dma.services.IEditorialService {  // Implementa la interfaz EditorialServicee
     
     private EntityManager em;  // Gestor de entidades
 

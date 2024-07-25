@@ -13,7 +13,7 @@ import java.util.List;
  * 
  * Autor: informatica
  */
-public interface EditorialServicee {
+public interface IEditorialService {
     
     /**
      * Crea una nueva editorial

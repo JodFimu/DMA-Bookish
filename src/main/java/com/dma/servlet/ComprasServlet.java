@@ -1,4 +1,4 @@
-package com.dma.servelet;
+package com.dma.servlet;
 
 import com.dma.model.Compras;
 import com.dma.service.ComprasService;
@@ -15,11 +15,11 @@ import java.util.List;
 /**
  * Servlet para manejar las solicitudes relacionadas con las compras.
  */
-@WebServlet(name = "ComptasServelet", value = {"/libro-servelet"})
+@WebServlet(name = "ComprasServlet", value = {"/compras-servlet"})
 @MultipartConfig
-public class ComprasServelet extends HttpServlet {
+public class ComprasServlet extends HttpServlet {
     // Servicio para manejar operaciones relacionadas con Compras
-    private ComprasServelet comprasServelet = new ComprasServelet();
+    private ComprasService comprasService = new ComprasService();
 
     /**
      * Inicializa el servlet.
@@ -30,7 +30,7 @@ public class ComprasServelet extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         // Inicializa el servicio de compras
-        this.comprasServelet = new ComprasServelet();
+        this.comprasService = new ComprasService();
     }
 
     /**
@@ -44,13 +44,13 @@ public class ComprasServelet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         // Llama al servicio para listar todas las compras
-        List<Compras> compras = comprasService.listarCliente();
+        List<Compras> compras = comprasService.listarCompras();
         // Imprime cada compra en la consola del servidor
         compras.forEach(p -> System.out.println(p));
         // Añade la lista de compras como un atributo en la solicitud
-        req.setAttribute("compras", compras);
+        req.setAttribute("Compras", compras);
         // Reenvía la solicitud y la respuesta al JSP
-        req.getRequestDispatcher("/lista-compras/lista-compras.jsp").forward(req, resp);
+        req.getRequestDispatcher("/listar-compras/listar-compras.jsp").forward(req, resp);
     }
 
     /**
@@ -63,10 +63,10 @@ public class ComprasServelet extends HttpServlet {
      */
     private void crearCompras(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Obtiene los parámetros de la solicitud y los convierte al tipo adecuado
-        int idCompras = request.getParameter(idCompras);
+        int idCompras = 0;
         String fecha = request.getParameter("fecha");
         String descripcion = request.getParameter("descripcion");
-        double total = request.getParameter(total);
+        double total = Double.parseDouble(request.getParameter("total"));
 
         // Crea una nueva instancia de Compras con los parámetros obtenidos
         Compras compras = new Compras(idCompras, fecha, descripcion, total);
@@ -74,7 +74,7 @@ public class ComprasServelet extends HttpServlet {
         comprasService.crearCompras(compras);
 
         // Redirige a la página principal
-        response.sendRedirect(request.getContextPath() + "/");
+        response.sendRedirect(request.getContextPath() + "/compras-servlet");
     }
 
     /**

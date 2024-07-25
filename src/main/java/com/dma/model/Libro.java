@@ -1,13 +1,20 @@
 package com.dma.model;
 
-public class Libro {
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
+@Entity
+public class Libro {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idLibro;
     private String nombre;
     private String sinopsis;
     private String autor;
-<<<<<<< Updated upstream
-=======
+    private Double precio;
+    private int existencias;
     private String genero;
     private String idioma;
     private String editorial;
@@ -103,5 +110,4 @@ public class Libro {
     }
 
 
->>>>>>> Stashed changes
 }

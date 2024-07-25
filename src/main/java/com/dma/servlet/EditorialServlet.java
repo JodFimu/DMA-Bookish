@@ -1,8 +1,7 @@
 package com.dma.servlet;
 
 import com.dma.model.Editorial;
-import com.dma.services.EditorialService;
-import com.dma.services.EditorialServicee;
+import com.dma.service.EditorialService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -22,7 +21,7 @@ import java.util.List;
 @MultipartConfig
 public class EditorialServlet extends HttpServlet {
 
-    private EditorialServicee editorialService;
+    private EditorialService editorialService;
     
      /**
      * Método init se ejecuta al iniciar el servlet. Aquí se instancia el servicio de la Editorial.
@@ -54,7 +53,7 @@ public class EditorialServlet extends HttpServlet {
 
 
     private void crearEditorial(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        int id=0
+        int id=0;
         String nombre = req.getParameter("nombre");
         String telefono = req.getParameter("telefono");
         String contacto = req.getParameter("contacto");

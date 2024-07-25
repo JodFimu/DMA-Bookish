@@ -35,7 +35,7 @@ public class ClientesServlet extends HttpServlet{
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Clientes> cliente = clientesService.listarCliente();
         cliente.forEach(c -> System.out.println(c));
-        req.setAttribute("clientes", cliente);
+        req.setAttribute("Clientes", cliente);
         req.getRequestDispatcher("/listar-clientes/listar-clientes.jsp").forward(req, resp);
     }
     
@@ -53,7 +53,7 @@ public class ClientesServlet extends HttpServlet{
         Clientes cliente = new Clientes(nitClientes,nombre, apellido, correo, telefono, direccion);
         clientesService.crearCliente(cliente);
 
-        response.sendRedirect(request.getContextPath() + "/");
+        response.sendRedirect(request.getContextPath() + "/clientes-servlet");
     }
     
     /*

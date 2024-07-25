@@ -38,7 +38,7 @@ public class LibroServlet extends HttpServlet {
 
     private void crearLibro(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int idLibro = 0;
-        String nombre = request.getParameter("color");
+        String nombre = request.getParameter("nombre");
         String sinopsis = request.getParameter("sinopsis");
         double precio = Double.parseDouble(request.getParameter("precio"));
         int existencias = Integer.parseInt(request.getParameter("existencias"));
