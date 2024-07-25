@@ -6,9 +6,11 @@ public class Compras {
     private String descripcion;
     private double total;
 
+    // Constructor vacio
     public Compras() {
     }
 
+// constructor con parametros
     public Compras(int idCompras,String fecha,String descripcion,double total) {
         this.idCompras = idCompras;
         this.fecha = fecha;
@@ -17,6 +19,7 @@ public class Compras {
 
     }
 
+    // metodos getters and setters que estableceran y devolveran los valores de cada atributo
     public int getIdCompras(){return idCompras;}
 
     public void setIdCompras(int idCompras){ this.idCompras = idCompras;}
