@@ -8,34 +8,58 @@ import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 
+/**
+ * Servicio para manejar las operaciones CRUD de la entidad Compras.
+ */
 public class ComprasService implements IcComprasService {
 
     private EntityManager em;
 
-    public ComprasService(){em = JpaUtil.getEntityManager();}
+    /**
+     * Constructor que inicializa el EntityManager utilizando JpaUtil.
+     */
+    public ComprasService() {
+        em = JpaUtil.getEntityManager();
+    }
 
+    /**
+     * Crea una nueva entidad Compras en la base de datos.
+     *
+     * @param compras la entidad Compras a persistir.
+     */
     @Override
     public void crearCompras(Compras compras) {
         EntityTransaction transaction = em.getTransaction();
 
-        try{
-
+        try {
+            // Inicia una transacción
             transaction.begin();
 
+            // Persiste la entidad Compras
             em.persist(compras);
-            transaction.commit();
 
-        }catch (Exception e){
-            if(transaction.isActive()){
-                transaction.getRollbackOnly();
+            // Confirma la transacción
+            transaction.commit();
+        } catch (Exception e) {
+            // Si ocurre una excepción, realiza un rollback si la transacción está activa
+            if (transaction.isActive()) {
+                transaction.rollback();
             }
             e.printStackTrace();
-
         }
     }
+
+    /**
+     * Lista todas las entidades Compras de la base de datos.
+     *
+     * @return una lista de entidades Compras.
+     */
     @Override
-    public List<Libro> listarCompras() {
-        TypedQuery<Libro> query = em.createQuery("select c from Compras c", Compras.class);
+    public List<Compras> listarCompras() {
+        // Crea una consulta tipada para seleccionar todas las entidades Compras
+        TypedQuery<Compras> query = em.createQuery("select c from Compras c", Compras.class);
+
+        // Ejecuta la consulta y devuelve la lista de resultados
         return query.getResultList();
     }
 }
