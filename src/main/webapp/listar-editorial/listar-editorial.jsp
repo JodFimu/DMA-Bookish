@@ -8,20 +8,20 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sistema de gestión/listado autores</title>
+    <title>sistema de gestión/listado editoriales</title>
     <link rel="icon" href="assets/imagenes/Logo.png" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark fixed-top position-relative">
     <div class="container-fluid">
-        <a class="navbar-brand" href="../index.jsp">Sistema de gestión de Autores</a>
+        <a class="navbar-brand" href="../index.jsp">Sistema de gestión de editoriales</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Sistema de gestión de Autores</h5>
+                <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Sistema de gestión de editoriales</h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
@@ -30,10 +30,10 @@
                         <a class="nav-link " href="../index.jsp">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../formulario-autor/formulario-autor.jsp">Formulario de Autores</a>
+                        <a class="nav-link" href="../formulario-editorial/formulario-editorial.jsp">Formulario de editoriales</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../listar-autor/listar-autor.jsp">Lista de Autores</a>
+                        <a class="nav-link active" aria-current="page" href="../listar-clientes/listar-clientes.jsp">Lista de editoriales</a>
                     </li>
                 </ul>
             </div>
@@ -46,15 +46,19 @@
                     <tr>
                         <th scope="col">#ID</th>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Contacto</th>
+                        <th scope="col">NITEditorial</th>
                     </tr>
                 </thead>
                 <tbody>
-                <c:forEach  var="Autor" items="${Autor}" >
+                <c:forEach  var="Editorial" items="${Editorial}" >
                     <tr>
-                        <td>${Autor.idAutor}</td>
-                        <td>${Autor.nombre}</td>
-                        <td>${Autor.apellido}</td>
+                        <td>${Editorial.idEditorial}</td>
+                        <td>${Editorial.nombre}</td>
+                        <td>${Editorial.telefono}</td>
+                        <td>${Editorial.Contacto}</td>
+                        <td>${Editorial.NITEditorial}</td>
                     </tr>
                 </c:forEach>
                 </tbody>

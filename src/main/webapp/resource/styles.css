@@ -1,0 +1,20 @@
+/* Asegura que el carrusel no se pase del contenedor */
+.carousel {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  
+  /* Estilo para las imágenes del carrusel */
+  .carousel-inner .carousel-item img {
+    object-fit: cover; /* Ajusta la imagen para cubrir el contenedor */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    max-height: 85vh; /* Ajusta la altura máxima según sea necesario */
+  }
+  
+  /* Estilo para el carrusel en dispositivos móviles */
+  @media (max-width: 768px) {
+    .carousel-inner .carousel-item img {
+      max-height: 50vh; /* Ajusta la altura máxima en dispositivos móviles */
+    }
+  }
+  
