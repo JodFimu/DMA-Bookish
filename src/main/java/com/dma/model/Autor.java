@@ -1,25 +1,29 @@
 package com.dma.model;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-public class Libro {
+public class Autor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAutor;
     private String nombre;
     private String apellido;
 
-    public Libro() {
+    public Autor() {
     }
 
-    public Libro(int idAutor, String nombre, String apellido) {
+    public Autor(int idAutor, String nombre, String apellido) {
         this.idAutor = idAutor;
         this.nombre = nombre;
         this.apellido = apellido;
     }
 
     //CONSTRUCTOR LLENO 2 SIN ID
-    public Libro(String nombre, String apellido) {
+    public Autor(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
     }//CONSTRUCTOR LLENO 2 SIN ID
-    
 
     public int getIdAutor() {
         return idAutor;
@@ -47,11 +51,9 @@ public class Libro {
 
     @Override
     public String toString() {
-        return "Libro{" + "idAutor=" + idAutor + ", nombre=" + nombre + ", apellido=" 
+        return "Autor{" + "idAutor=" + idAutor + ", nombre=" + nombre + ", apellido=" 
                 + apellido + '}';
-        
     }
-    
     
     
     
