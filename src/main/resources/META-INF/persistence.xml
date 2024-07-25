@@ -6,6 +6,11 @@
   <persistence-unit name="CRUDBookishDB" transaction-type="RESOURCE_LOCAL">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>com.dma.model.Libro</class>
+    <class>com.dma.model.Clientes</class>
+    <class>com.dma.model.Compras</class>
+    <class>com.dma.model.Autor</class>
+    <class>com.dma.model.Editorial</class>
+    <class>com.dma.model.Factura</class>
     <properties>
       <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"   />
       <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/CRUDBookishDB?serverTimezone=GMT-6" />
