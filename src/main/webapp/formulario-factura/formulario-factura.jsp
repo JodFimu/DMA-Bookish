@@ -1,5 +1,9 @@
 <%-- 
+<<<<<<< HEAD
     Document   : formulario-autor
+=======
+    Document   : formulario-factura
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
     Author     : Anthony Escobar
 --%>
 
@@ -7,6 +11,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+<<<<<<< HEAD
         <link rel="icon" href="assets/imagenes/Logo.png" type="image/x-icon">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +46,13 @@
                 </div>
             </div>
         </nav>
+=======
+        <meta charset="UTF-8">
+        <title>Agregar Factura</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-qjz5+2qjBk/e3hFf9N8tqPQ6T+nNQFw5Y5+5heFyDveov5Z+Om2YjTA+aUNH8yZb" crossorigin="anonymous">
+    </head>
+    <body>
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
         <div class="container mt-5">
             <h2>Agregar Factura</h2>
             <form action="${pageContext.request.contextPath}/editorial-servlet" method="post">
@@ -70,6 +82,12 @@
                 </div>
             </form>
         </div>
+<<<<<<< HEAD
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 </html>
+=======
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qjz5+2qjBk/e3hFf9N8tqPQ6T+nNQFw5Y5+5heFyDveov5Z+Om2YjTA+aUNH8yZb" crossorigin="anonymous"></script>
+    </body>
+</html>
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c

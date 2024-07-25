@@ -1,11 +1,16 @@
 <%-- 
+<<<<<<< HEAD
     Document   : listar-autor
+=======
+    Document   : listar-factura
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
     Author     : Anthony Escobar
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+<<<<<<< HEAD
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>sistema de gestión/listado facturas</title>
@@ -40,6 +45,11 @@
         </div>
     </div>
 </nav>
+=======
+    <title>Listado Informacion sobre Facturas</title>
+</head>
+<body>
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
 <div class="container mt-5">
     <table class="table">
         <thead>
@@ -62,6 +72,9 @@
         </tbody>
     </table>
 </div>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+=======
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
 </body>
 </html>

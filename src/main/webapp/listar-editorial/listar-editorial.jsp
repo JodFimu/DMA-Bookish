@@ -1,10 +1,15 @@
 <%-- 
+<<<<<<< HEAD
     Document   : listar-autor
+=======
+    Document   : listar-editorial
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
     Author     : Anthony Escobar
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<<<<<<< HEAD
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -41,6 +46,13 @@
     </div>
 </nav>
 <div class="container mt-5">
+=======
+    <head>
+        <title>Listado Informacion Editoriales</title>
+    </head>
+    <body>
+        <div class="container mt-5">
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
             <table class="table">
                 <thead>
                     <tr>
@@ -64,6 +76,10 @@
                 </tbody>
             </table>
         </div>
+<<<<<<< HEAD
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+=======
+    </body>
+>>>>>>> e9486aea539a342240a11cf46b009ab8dbef769c
 </html>
