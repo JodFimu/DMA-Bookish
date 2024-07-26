@@ -20,13 +20,13 @@ public class Factura {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int numeroFactura;
     private String estado;
-    private BigDecimal totalFactura;
+    private double totalFactura;
     private String fechaFactura;
 
     public Factura() {
     }
 
-    public Factura(int numeroFactura, String estado, BigDecimal totalFactura, String fechaFactura) {
+    public Factura(int numeroFactura, String estado, double totalFactura, String fechaFactura) {
         this.numeroFactura = numeroFactura;
         this.estado = estado;
         this.totalFactura = totalFactura;
@@ -49,11 +49,11 @@ public class Factura {
         this.estado = estado;
     }
 
-    public BigDecimal getTotalFactura() {
+    public double getTotalFactura() {
         return totalFactura;
     }
 
-    public void setTotalFactura(BigDecimal totalFactura) {
+    public void setTotalFactura(double totalFactura) {
         this.totalFactura = totalFactura;
     }
 

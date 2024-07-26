@@ -26,13 +26,13 @@ public class FacturaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Factura> facturas = facturaService.listarFactura();
         facturas.forEach(f -> System.out.println(f));
-        request.setAttribute("facturas", facturas);
+        request.setAttribute("Factura", facturas);
         request.getRequestDispatcher("/listar-factura/listar-factura.jsp").forward(request, response);
     }
 
     private void crearFactura(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String estado = request.getParameter("estado");
-        BigDecimal totalFactura = new BigDecimal(request.getParameter("totalFactura"));
+        double totalFactura = Double.parseDouble(request.getParameter("totalFactura"));
         String fechaFactura = request.getParameter("fechaFactura");
 
         Factura factura = new Factura();

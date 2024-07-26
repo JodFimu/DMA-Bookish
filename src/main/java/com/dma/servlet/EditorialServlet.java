@@ -39,7 +39,7 @@ public class EditorialServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Editorial> editoriales = editorialService.listarEditoriales();
-        req.setAttribute("editoriales", editoriales);
+        req.setAttribute("Editorial", editoriales);
         req.getRequestDispatcher("/listar-editorial/listar-editorial.jsp").forward(req, resp);
     }
     

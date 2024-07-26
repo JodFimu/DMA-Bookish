@@ -49,6 +49,24 @@
                     <li class="nav-item">
                         <a class="nav-link " href="./compras-servlet">Lista de Compras</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./formulario-autor/formulario-autor.jsp">Formulario de Autor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./autor-servlet">Lista de autores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./formulario-editorial/formulario-editorial.jsp">Formulario de Editorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="./editorial-servlet">Lista de Editorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./formulario-factura/formulario-factura.jsp">Formulario de Factura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./factura-servlet">Lista de Facturas</a>
+                    </li>
                 </ul>
             </div>
         </div>

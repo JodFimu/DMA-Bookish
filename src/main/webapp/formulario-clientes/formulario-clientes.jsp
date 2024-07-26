@@ -30,25 +30,43 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="../index.jsp">Inicio</a>
+                        <a class="nav-link active" aria-current="page" href="../index.jsp">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../formulario-libro/formulario-libro.jsp">Formulario de Libros</a>
+                        <a class="nav-link" href="../formulario-libro/formulario-libro.jsp">Formulario de Libro</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="../libro-servlet">Lista de Libros</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./formulario-clientes.jsp">Formulario de Clientes</a>
+                        <a class="nav-link" href="../formulario-clientes/formulario-clientes.jsp">Formulario de Clientes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link " href="../clientes-servlet">Lista de Clientes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="../formulario-autor/formulario-autor.jsp">Formulario de Autores</a>
+                        <a class="nav-link" href="../formulario-compras/formulario-compras.jsp">Formulario de Compras</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../listar-autor/listar-autor.jsp">Lista de Autores</a>
+                        <a class="nav-link " href="../compras-servlet">Lista de Compras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../formulario-autor/formulario-autor.jsp">Formulario de Autor</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../autor-servlet">Lista de autores</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../formulario-editorial/formulario-editorial.jsp">Formulario de Editorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../editorial-servlet">Lista de Editorial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../formulario-factura/formulario-factura.jsp">Formulario de Factura</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../factura-servlet">Lista de Facturas</a>
                     </li>
                 </ul>
             </div>

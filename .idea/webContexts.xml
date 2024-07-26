@@ -3,7 +3,10 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/formulario-editorial/formulario-editorial.jsp" value="file://$PROJECT_DIR$/src/main/webapp/formulario-editorial" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/formulario-factura/formulario-factura.jsp" value="file://$PROJECT_DIR$/src/main/webapp/formulario-factura" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/listar-editorial/listar-editorial.jsp" value="file://$PROJECT_DIR$/src/main/webapp/listar-editorial" />
       </map>
     </option>
   </component>

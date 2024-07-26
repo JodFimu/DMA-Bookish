@@ -31,7 +31,7 @@ public class AutorServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Autor> autor = AutorService.listarAutor();
         autor.forEach(a -> System.out.println(a));
-        req.setAttribute("autor", autor);
+        req.setAttribute("Autor", autor);
         req.getRequestDispatcher("/listar-autor/listar-autor.jsp").forward(req, resp);
     }
 
@@ -45,7 +45,7 @@ public class AutorServlet extends HttpServlet {
         Autor autor = new Autor(nombre, apellido);
         AutorService.crearAutor(autor);
 
-        resp.sendRedirect(req.getContextPath() + "/");
+        resp.sendRedirect(req.getContextPath() + "/autor-servlet");
     }
     /*
     * Almacenamiento de creado datos
