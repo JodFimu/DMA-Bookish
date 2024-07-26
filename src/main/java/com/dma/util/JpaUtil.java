@@ -24,6 +24,5 @@ public class JpaUtil {
 
     public static void close() {
         em.close();
-
     }
 }
